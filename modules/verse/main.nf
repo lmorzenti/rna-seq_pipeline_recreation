@@ -3,10 +3,10 @@
 process VERSE {
     label 'process_high'
     container 'ghcr.io/bf528/verse:latest'
-    publishDir params.outdir
+    publishDir "${params.outdir}/verse", mode: "copy"
 
     input:
-    path gtf
+    path(gtf)
     tuple val(sample_id), path(bam)
 
     output:
@@ -21,6 +21,5 @@ process VERSE {
     """
     touch ${sample_id}.exon.txt
     """
-
 
 }

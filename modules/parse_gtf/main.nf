@@ -3,10 +3,10 @@
 process PARSE_GTF {
     label 'process_medium'
     container 'ghcr.io/bf528/biopython:latest'
-    publishDir params.outdir
+    publishDir "${params.outdir}/parsed", mode: "copy"
 
     input:
-    path gtf
+    path(gtf)
 
     output:
     path('id2name.txt'), emit: id2name
@@ -15,13 +15,11 @@ process PARSE_GTF {
     """
     parse_gtf.py -i $gtf -o id2name.txt
     """
-    // do you reiterate the input&output from above down below in the script?
 
     stub:
     """
     touch id2name.txt
     """
-
 
 }
 

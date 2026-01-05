@@ -10,7 +10,7 @@ process INDEX {
     path gtf
 
     output:
-    path "star", emit: index
+    path("star"), emit: index
 
     script:
     """
@@ -22,6 +22,5 @@ process INDEX {
     """
     mkdir star
     """
-
 
 }

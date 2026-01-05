@@ -3,7 +3,7 @@
 process CONCAT {
     label 'process_medium'
     container 'ghcr.io/bf528/pandas:latest'
-    publishDir params.outdir
+    publishDir "${params.outdir}/concat", mode: "copy"
 
     input:
     path(counts)
@@ -20,8 +20,5 @@ process CONCAT {
     """
     touch verse_concat.csv
     """
-
-
-
 
 }

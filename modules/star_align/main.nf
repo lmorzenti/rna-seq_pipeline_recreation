@@ -3,7 +3,7 @@
 process ALIGN {
     label 'process_high'
     container 'ghcr.io/bf528/star:latest'
-    publishDir params.outdir
+    publishDir "${params.outdir}/star_align", mode: "copy"
 
     input:
     tuple val(sample_id), path(reads)

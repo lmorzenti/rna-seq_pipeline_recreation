@@ -2,14 +2,13 @@
 
 process MULTIQC {
     label 'process_low'
-    container 'ghcr.io/bf528/multiqc:latest' // the environment to run to run the tools 
-    publishDir params.outdir
+    container 'ghcr.io/bf528/multiqc:latest'
+    publishDir "${params.outdir}/multiqc", mode: "copy"
 
     input:
-    path('*') // this will automatically create an HTML file as an output
-    // path and file are interchangable 
+    path('*') 
 
-    output: // file you expect to exist 
+    output: 
     path('multiqc_report.html')
 
     script:
@@ -21,6 +20,5 @@ process MULTIQC {
     """
     touch multiqc_report.html
     """
-
 
 }
