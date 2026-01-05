@@ -1,7 +1,7 @@
 ## Recreation of RNA-seq/Differential Expression Analysis from "The type 1 diabetes gene TYK2 regulates β-cell development and its responses to interferon-α" Chandra et al., 2022.
 
 ## Data Source
-This project uses paired-end RNA-seq reads from Chandra et al. (2022), which aims to 
+This project uses paired-end RNA-seq reads from Chandra et al. (2022), which investigates the role of the type 1 diabetes gene, TYK2, in β-cell development and response to IFNα.
 
 **Data:** RNA-seq data from NCBI GEO, accession code: GSE190727 and GSE190725.
 
