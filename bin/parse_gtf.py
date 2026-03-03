@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
+# This will create the cli arguments to 
 import argparse
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='Parse GTF files to gather data')
 parser.add_argument('-i', "--input", dest='input', help='The input file specificed is the GTF file', required=True)
 parser.add_argument('-o', "--output", dest='output', help='Output file name and path', required=True)
 args = parser.parse_args()
 
 
+# This will actually parse the file
 import csv
 
 ids = []

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-#we want a script that will concatenate all of the verse output files and write a single counts matrix that will containing all of the samples 
-
 # ghcr.io/bf528/pandas:latest 
 
+# Create cli arguments for the concatenation of the VERSE output files to work
 import argparse
 parser = argparse.ArgumentParser(description='Concatenate VERSE output files')
 parser.add_argument("-i", "--input", help='A list of the VERSE output', dest="input", required=True, nargs='+')
@@ -11,6 +10,8 @@ parser.add_argument("-o", "--output", help='The output file name and path provid
 
 args = parser.parse_args()
 
+
+# Create a single count matrix
 import pandas as pd
 import os
 
